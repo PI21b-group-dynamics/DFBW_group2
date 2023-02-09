@@ -24,7 +24,7 @@ namespace Груповая_динамика_Программа
 
             wordTextField_Leave(new object(), new EventArgs());
             addresTextField_Leave(new object(), new EventArgs());
-
+            LogsTextField.Select();
         }
         /*----PlaceholderText---*/
 
