@@ -6,9 +6,6 @@ using System.Windows.Forms;
 
 namespace Груповая_динамика_Программа
 {
-    /// <summary>
-    /// Моя ветка
-    /// </summary>
     public class Example
     {
         string rndWord;
@@ -36,6 +33,8 @@ namespace Груповая_динамика_Программа
 
                 for (int i = 0; i < valueFile; i++)
                     createRndFiles(path);
+                for (int i = 0; i < valueFolder; i++)
+                    createRndDirectrory(path);
 
                 return rndWord;
             }
@@ -111,5 +110,25 @@ namespace Груповая_динамика_Программа
             }
             sw.Close();
         }
+        public void createRndDirectrory(string path)
+        {
+            Random gen = new Random();
+            string spath;
+            for (int i = gen.Next(2, 5); i > 0; i--)
+            {
+                spath = path + "\\" + createRndWord("");
+                Directory.CreateDirectory(spath);
+                createRndFiles(spath);
+            }
+
+        }
+        public string createRndWord(string result)
+        {
+            Random rnd = new Random();
+            for (int i = rnd.Next(7, 19); i > 0; i--)
+                result += (char)rnd.Next('a', 'z'); ;
+            return result;
+        }
+
     }
 }
