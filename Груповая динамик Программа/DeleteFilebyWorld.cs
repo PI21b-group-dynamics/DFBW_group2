@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -10,22 +11,26 @@ namespace Груповая_динамика_Программа
     {
         string Word;
 
-        public void DeleteByWord(string start_path, string word)
+        private List<string> Logs = new List<string>();
+
+        public List<string> DeleteByWord(string start_path, string word)
         {
             if (!Directory.Exists(start_path))
             {
                 MessageBox.Show("Данной директории не существует!");
-                return;
+                return null;
             }
             if(word == null || word.Length == 0)
             {
                 MessageBox.Show("Слово поиска, пустое!");
-                return;
+                return null;
             }
 
             Word = word;
 
             searh_and_Delete_Files(start_path);
+
+            return Logs;
         }
 
         private void searh_and_Delete_Files(string Path)
@@ -37,13 +42,18 @@ namespace Груповая_динамика_Программа
                 try
                 {
                     if (getFileNameWithoutExtension(file.Name) == Word)
+                    {
+                        String prom = file.Name;
                         file.Delete(); //MessageBox.Show("Файл : " + file.FullName + " соответствует.");
+                        Logs.Add("Файл: " + prom + " был успешно удален.");
+                    }
                     else
                         search_in_Data_File(file);
                 }
                 catch (IOException ex)
                 {
                     MessageBox.Show(ex.Message);
+                    Logs.Add(ex.Message);
                 }
             }
             foreach (var dir in di.GetDirectories())
@@ -58,9 +68,11 @@ namespace Груповая_динамика_Программа
                 {
                     if (Regex.IsMatch(str, @"\b" + @Word + @"\b")) //@"([\n\s]|^)" + @Word + @"([\n\s]|$)"
                     {
-                        //MessageBox.Show("Файл : " + file.FullName + " соответствует.");
                         read.Close();
+
+                        String prom = file.Name;
                         file.Delete();
+                        Logs.Add("Файл: " + prom + " был успешно удален.");
                         break;
                     }
                 }

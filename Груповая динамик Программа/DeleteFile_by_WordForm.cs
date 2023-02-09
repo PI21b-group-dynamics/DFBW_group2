@@ -25,7 +25,20 @@ namespace Груповая_динамика_Программа
         {
             DeleteFilebyWorld df = new DeleteFilebyWorld();
 
-            df.DeleteByWord(addresTextField.Text, wordTextField.Text);
+            sendText_in_LogsField(df.DeleteByWord(addresTextField.Text, wordTextField.Text));
+        }
+
+        private void sendText_in_LogsField(List<string> list)
+        {
+            String str = "";
+
+            if (list != null && list.Count > 0)
+                foreach (string item in list)
+                {
+                    str += item + "\r\n";
+                }
+
+            LogsTextField.Text = str;
         }
 
         private void DeleteFile_by_WordForm_SizeChanged(object sender, EventArgs e)
@@ -58,6 +71,8 @@ namespace Груповая_динамика_Программа
         {
             Example ex = new Example();
             wordTextField.Text = ex.createRndExample(addresTextField.Text);
+
+            MessageBox.Show("Было создано успешно создано " + ex.getCountFiles() + " тестовых файлов");
         }
     }
 }

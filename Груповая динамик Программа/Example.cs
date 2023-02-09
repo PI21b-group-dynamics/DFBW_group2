@@ -14,12 +14,16 @@ namespace Груповая_динамика_Программа
         string rndWord;
         int valueFile;
         int valueFolder;
+
         public Example()
         {
             rndWord = "";
             valueFile = 0;
             valueFolder = 0;
         }
+
+        public int getCountFiles() { return valueFile; }
+
         public string createRndExample(string path)
         {
             if (openDir(path))
@@ -33,12 +37,9 @@ namespace Груповая_динамика_Программа
                 for (int i = 0; i < valueFile; i++)
                     createRndFiles(path);
 
-
-
                 return rndWord;
             }
             return "";
-
         }
 
         public bool openDir(string path)
@@ -64,12 +65,18 @@ namespace Груповая_динамика_Программа
             }
         }
 
+        bool ForCreate = false;
+
         public void createRndFiles(string path)
         {
             string fileName = System.IO.Path.GetRandomFileName();
             Random gen = new Random();
-            if (gen.Next(100) < 50)
+
+            if (!ForCreate)
+            {
                 fileName = rndWord;
+                ForCreate = true;
+            }
             StreamWriter sw = new StreamWriter(path + "\\" + fileName + ".txt", true);
 
             int str = gen.Next(15, 150);
