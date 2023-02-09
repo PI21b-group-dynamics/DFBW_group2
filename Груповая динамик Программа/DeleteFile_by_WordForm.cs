@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Груповая_динамика_Программа
 
             wordTextField_Leave(new object(), new EventArgs());
             addresTextField_Leave(new object(), new EventArgs());
+
         }
 
         private void sendButton_Click(object sender, EventArgs e)
@@ -103,6 +105,14 @@ namespace Груповая_динамика_Программа
             wordTextField.Text = PlaceholderTextWordTextField;
 
             wordTextField.ForeColor = Color.Gray;
+        }
+
+        private void установитьДиректориюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(folderBrowserDialog1.SelectedPath);
+            }
         }
 
     }
