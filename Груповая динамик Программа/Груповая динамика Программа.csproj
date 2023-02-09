@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Example.cs" />
     <EmbeddedResource Include="DeleteFile_by_WordForm.resx">
       <DependentUpon>DeleteFile_by_WordForm.cs</DependentUpon>
     </EmbeddedResource>

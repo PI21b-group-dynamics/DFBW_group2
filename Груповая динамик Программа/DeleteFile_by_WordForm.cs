@@ -52,5 +52,12 @@ namespace Груповая_динамика_Программа
 
             addresTextField.ForeColor = Color.Gray;
         }
+
+        
+        private void createRndExampleButton_Click(object sender, EventArgs e)
+        {
+            Example ex = new Example();
+            wordTextField.Text = ex.createRndExample(addresTextField.Text);
+        }
     }
 }
