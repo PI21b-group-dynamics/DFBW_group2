@@ -76,7 +76,7 @@ namespace Груповая_динамика_Программа
                 fileName = rndWord;
                 ForCreate = true;
             }
-            StreamWriter sw = new StreamWriter(path + "\\" + fileName + ".txt", true);
+            StreamWriter sw = new StreamWriter(path + "\\" + fileName, true);
 
             int str = gen.Next(15, 150);
             int sym = 0;
