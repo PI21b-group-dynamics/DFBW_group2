@@ -20,6 +20,9 @@ namespace Груповая_динамика_Программа
         private void DeleteFile_by_WordForm_Load(object sender, EventArgs e)
         {
             LogsTextField.MouseWheel += new MouseEventHandler(MouseWheelLogsTextField);
+
+            wordTextField_Leave(new object(), new EventArgs());
+            addresTextField_Leave(new object(), new EventArgs());
         }
 
         private void sendButton_Click(object sender, EventArgs e)
@@ -42,8 +45,29 @@ namespace Груповая_динамика_Программа
             LogsTextField.Text = str;
         }
 
-        String PlaceholderTextAddrestTextField = "Дирректория для поиска";
+        private void createRndExampleButton_Click(object sender, EventArgs e)
+        {
+            Example ex = new Example();
+            wordTextField.Text = ex.createRndExample(addresTextField.Text);
 
+            MessageBox.Show("Было создано успешно создано " + ex.getCountFiles() + " тестовых файлов");
+        }
+
+        private void MouseWheelLogsTextField(object obj, MouseEventArgs e)
+        {
+            if(Control.ModifierKeys == Keys.Control)
+                if (e.Delta > 0)
+                    LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size + 1);
+                else
+                    LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size - 1);
+        }
+
+        /**----PlaceholderText---*/
+
+        String PlaceholderTextAddrestTextField = "Дирректория для поиска";
+        String PlaceholderTextWordTextField = "Слово для удаления файла";
+
+        ///Адресс
         private void addresTextField_Enter(object sender, EventArgs e)
         {
             if (addresTextField.Text.Length != 0 && !addresTextField.Text.Equals(PlaceholderTextAddrestTextField)) return;
@@ -62,22 +86,24 @@ namespace Груповая_динамика_Программа
             addresTextField.ForeColor = Color.Gray;
         }
 
-        private void createRndExampleButton_Click(object sender, EventArgs e)
+        ///Слово
+        private void wordTextField_Enter(object sender, EventArgs e)
         {
-            Example ex = new Example();
-            wordTextField.Text = ex.createRndExample(addresTextField.Text);
+            if (wordTextField.Text.Length != 0 && !wordTextField.Text.Equals(PlaceholderTextWordTextField)) return;
 
-            MessageBox.Show("Было создано успешно создано " + ex.getCountFiles() + " тестовых файлов");
+            wordTextField.Text = "";
+
+            wordTextField.ForeColor = Color.Black;
         }
 
-        private void MouseWheelLogsTextField(object obj, MouseEventArgs e)
+        private void wordTextField_Leave(object sender, EventArgs e)
         {
-            if(Control.ModifierKeys == Keys.Control)
-                if (e.Delta > 0)
-                    LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size + 1);
-                else
-                    LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size - 1);
+            if (wordTextField.Text.Length != 0) return;
+
+            wordTextField.Text = PlaceholderTextWordTextField;
+
+            wordTextField.ForeColor = Color.Gray;
         }
 
     }
-}
+}   
