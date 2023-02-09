@@ -111,7 +111,7 @@ namespace Груповая_динамика_Программа
         {
             if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(folderBrowserDialog1.SelectedPath);
+                addresTextField.Text = folderBrowserDialog1.SelectedPath;
             }
         }
 
