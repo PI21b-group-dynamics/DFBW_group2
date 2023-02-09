@@ -44,10 +44,10 @@
             this.addresTextField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addresTextField.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.addresTextField.Location = new System.Drawing.Point(9, 19);
-            this.addresTextField.Margin = new System.Windows.Forms.Padding(2);
+            this.addresTextField.Location = new System.Drawing.Point(12, 11);
+            this.addresTextField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addresTextField.Name = "addresTextField";
-            this.addresTextField.Size = new System.Drawing.Size(521, 29);
+            this.addresTextField.Size = new System.Drawing.Size(693, 34);
             this.addresTextField.TabIndex = 0;
             this.addresTextField.Enter += new System.EventHandler(this.addresTextField_Enter);
             this.addresTextField.Leave += new System.EventHandler(this.addresTextField_Leave);
@@ -57,10 +57,10 @@
             this.wordTextField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wordTextField.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.wordTextField.Location = new System.Drawing.Point(9, 52);
-            this.wordTextField.Margin = new System.Windows.Forms.Padding(2);
+            this.wordTextField.Location = new System.Drawing.Point(12, 52);
+            this.wordTextField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wordTextField.Name = "wordTextField";
-            this.wordTextField.Size = new System.Drawing.Size(363, 29);
+            this.wordTextField.Size = new System.Drawing.Size(483, 34);
             this.wordTextField.TabIndex = 1;
             this.wordTextField.Enter += new System.EventHandler(this.wordTextField_Enter);
             this.wordTextField.Leave += new System.EventHandler(this.wordTextField_Leave);
@@ -69,10 +69,10 @@
             // 
             this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.sendButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sendButton.Location = new System.Drawing.Point(376, 52);
-            this.sendButton.Margin = new System.Windows.Forms.Padding(2);
+            this.sendButton.Location = new System.Drawing.Point(501, 52);
+            this.sendButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(154, 31);
+            this.sendButton.Size = new System.Drawing.Size(205, 38);
             this.sendButton.TabIndex = 2;
             this.sendButton.Text = "Найти и удалить";
             this.sendButton.UseVisualStyleBackColor = true;
@@ -82,9 +82,10 @@
             // 
             this.createRndExampleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.createRndExampleButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.createRndExampleButton.Location = new System.Drawing.Point(601, 52);
+            this.createRndExampleButton.Location = new System.Drawing.Point(801, 52);
+            this.createRndExampleButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.createRndExampleButton.Name = "createRndExampleButton";
-            this.createRndExampleButton.Size = new System.Drawing.Size(166, 31);
+            this.createRndExampleButton.Size = new System.Drawing.Size(221, 38);
             this.createRndExampleButton.TabIndex = 3;
             this.createRndExampleButton.Text = "Сгенерировать пример";
             this.createRndExampleButton.UseVisualStyleBackColor = true;
@@ -96,13 +97,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LogsTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LogsTextField.Location = new System.Drawing.Point(9, 99);
-            this.LogsTextField.Margin = new System.Windows.Forms.Padding(2);
+            this.LogsTextField.Location = new System.Drawing.Point(12, 96);
+            this.LogsTextField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogsTextField.Multiline = true;
             this.LogsTextField.Name = "LogsTextField";
             this.LogsTextField.ReadOnly = true;
             this.LogsTextField.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.LogsTextField.Size = new System.Drawing.Size(758, 251);
+            this.LogsTextField.Size = new System.Drawing.Size(1009, 320);
             this.LogsTextField.TabIndex = 4;
             this.LogsTextField.WordWrap = false;
             // 
@@ -114,9 +115,10 @@
             // 
             this.chooseFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chooseFolder.Image = global::Груповая_динамика_Программа.Properties.Resources.open_folder;
-            this.chooseFolder.Location = new System.Drawing.Point(535, 19);
+            this.chooseFolder.Location = new System.Drawing.Point(713, 11);
+            this.chooseFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chooseFolder.Name = "chooseFolder";
-            this.chooseFolder.Size = new System.Drawing.Size(39, 29);
+            this.chooseFolder.Size = new System.Drawing.Size(52, 36);
             this.chooseFolder.TabIndex = 6;
             this.chooseFolder.UseVisualStyleBackColor = true;
             this.chooseFolder.Click += new System.EventHandler(this.chooseFolder_Click);
@@ -125,18 +127,20 @@
             // 
             this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.helpButton.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.helpButton.Location = new System.Drawing.Point(601, 19);
+            this.helpButton.Location = new System.Drawing.Point(801, 11);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(166, 29);
+            this.helpButton.Size = new System.Drawing.Size(221, 36);
             this.helpButton.TabIndex = 7;
             this.helpButton.Text = "Справка";
             this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // DeleteFile_by_WordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 356);
+            this.ClientSize = new System.Drawing.Size(1029, 427);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.chooseFolder);
             this.Controls.Add(this.LogsTextField);
@@ -145,9 +149,9 @@
             this.Controls.Add(this.wordTextField);
             this.Controls.Add(this.addresTextField);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(1879, 2039);
-            this.MinimumSize = new System.Drawing.Size(647, 284);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(2499, 2499);
+            this.MinimumSize = new System.Drawing.Size(857, 339);
             this.Name = "DeleteFile_by_WordForm";
             this.Text = "Поиск и удаление файлов по ключевым словам";
             this.Load += new System.EventHandler(this.DeleteFile_by_WordForm_Load);

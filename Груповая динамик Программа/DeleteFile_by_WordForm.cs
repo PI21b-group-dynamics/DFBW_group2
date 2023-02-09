@@ -33,9 +33,10 @@ namespace Груповая_динамика_Программа
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            DeleteFilebyWorld df = new DeleteFilebyWorld();
+            if (MessageBox.Show("Файлы соответствующие введенному \r\nслову будут удалены. " +
+                "\r\nВы хотите продолжить?", "Уведомление", MessageBoxButtons.YesNo) == DialogResult.No) return;
 
-            sendText_in_LogsField(df.DeleteByWord(addresTextField.Text, wordTextField.Text));
+            sendText_in_LogsField(new DeleteFilebyWorld().DeleteByWord(addresTextField.Text, wordTextField.Text));
         }
 
         private void sendText_in_LogsField(List<string> list)
@@ -122,6 +123,14 @@ namespace Груповая_динамика_Программа
                 addresTextField_Enter(new object(), new EventArgs());
                 addresTextField.Text = folderBrowserDialog1.SelectedPath;
             }
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Разработанная программы-фильтр, предназначена для удаления файлов, " +
+                "в имени и/или содержимом которых встречается заданное слово/фраза\r\n" +
+                "В первое текстовое поле вписывается адрес а во второе ключевое слово по " +
+                "которому будет идти поиск для последующего удаления.");
         }
     }
 }   
