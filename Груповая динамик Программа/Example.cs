@@ -70,7 +70,7 @@ namespace Груповая_динамика_Программа
             Random gen = new Random();
             if (gen.Next(100) < 50)
                 fileName = rndWord;
-            StreamWriter sw = new StreamWriter(path + "\\" + fileName + ".txt");
+            StreamWriter sw = new StreamWriter(path + "\\" + fileName + ".txt", true);
 
             int str = gen.Next(15, 150);
             int sym = 0;
