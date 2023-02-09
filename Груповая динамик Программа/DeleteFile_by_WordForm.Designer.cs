@@ -75,12 +75,12 @@
             // createRndExampleButton
             // 
             this.createRndExampleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.createRndExampleButton.Location = new System.Drawing.Point(723, 46);
+            this.createRndExampleButton.Location = new System.Drawing.Point(842, 46);
             this.createRndExampleButton.Margin = new System.Windows.Forms.Padding(4);
             this.createRndExampleButton.Name = "createRndExampleButton";
-            this.createRndExampleButton.Size = new System.Drawing.Size(300, 30);
+            this.createRndExampleButton.Size = new System.Drawing.Size(181, 30);
             this.createRndExampleButton.TabIndex = 3;
-            this.createRndExampleButton.Text = "Добавить слуйные файлы для примера";
+            this.createRndExampleButton.Text = "Сгенерировать пример";
             this.createRndExampleButton.UseVisualStyleBackColor = true;
             this.createRndExampleButton.Click += new System.EventHandler(this.createRndExampleButton_Click);
             // 
