@@ -110,15 +110,6 @@ namespace Груповая_динамика_Программа
             wordTextField.ForeColor = Color.Gray;
         }
 
-        private void установитьДиректориюToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                addresTextField_Enter(new object(), new EventArgs());
-                addresTextField.Text = folderBrowserDialog1.SelectedPath;
-            }
-        }
-
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Разработанная программы-фильтр, предназначена для удаления файлов, в имени и/или содержимом которых встречается заданное слово/фраза\r\nВ первое текстовое поле вписывается адрес а во второе ключевое слово по которому будет идти поиск для последующего удаления.");
