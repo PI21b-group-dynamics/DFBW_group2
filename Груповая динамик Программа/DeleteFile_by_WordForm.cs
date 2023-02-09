@@ -17,6 +17,11 @@ namespace Груповая_динамика_Программа
             InitializeComponent();
         }
 
+        private void DeleteFile_by_WordForm_Load(object sender, EventArgs e)
+        {
+            LogsTextField.MouseWheel += new MouseEventHandler(MouseWheelLogsTextField);
+        }
+
         private void sendButton_Click(object sender, EventArgs e)
         {
             DeleteFilebyWorld df = new DeleteFilebyWorld();
@@ -57,7 +62,6 @@ namespace Груповая_динамика_Программа
             addresTextField.ForeColor = Color.Gray;
         }
 
-        
         private void createRndExampleButton_Click(object sender, EventArgs e)
         {
             Example ex = new Example();
@@ -65,5 +69,15 @@ namespace Груповая_динамика_Программа
 
             MessageBox.Show("Было создано успешно создано " + ex.getCountFiles() + " тестовых файлов");
         }
+
+        private void MouseWheelLogsTextField(object obj, MouseEventArgs e)
+        {
+            if(Control.ModifierKeys == Keys.Control)
+                if (e.Delta > 0)
+                    LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size + 1);
+                else
+                    LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size - 1);
+        }
+
     }
 }
