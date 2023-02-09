@@ -37,28 +37,33 @@
             // 
             // addresTextField
             // 
+            this.addresTextField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addresTextField.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.addresTextField.Location = new System.Drawing.Point(12, 12);
             this.addresTextField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addresTextField.Name = "addresTextField";
-            this.addresTextField.Size = new System.Drawing.Size(776, 27);
+            this.addresTextField.Size = new System.Drawing.Size(1010, 27);
             this.addresTextField.TabIndex = 0;
             this.addresTextField.Enter += new System.EventHandler(this.addresTextField_Enter);
             this.addresTextField.Leave += new System.EventHandler(this.addresTextField_Leave);
             // 
             // wordTextField
             // 
+            this.wordTextField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wordTextField.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.wordTextField.Location = new System.Drawing.Point(12, 46);
             this.wordTextField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wordTextField.Name = "wordTextField";
-            this.wordTextField.Size = new System.Drawing.Size(249, 30);
+            this.wordTextField.Size = new System.Drawing.Size(483, 30);
             this.wordTextField.TabIndex = 1;
             // 
             // sendButton
             // 
+            this.sendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.sendButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sendButton.Location = new System.Drawing.Point(267, 46);
+            this.sendButton.Location = new System.Drawing.Point(501, 46);
             this.sendButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(80, 30);
@@ -69,8 +74,9 @@
             // 
             // createRndExampleButton
             // 
-            this.createRndExampleButton.Location = new System.Drawing.Point(489, 46);
-            this.createRndExampleButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createRndExampleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.createRndExampleButton.Location = new System.Drawing.Point(723, 46);
+            this.createRndExampleButton.Margin = new System.Windows.Forms.Padding(4);
             this.createRndExampleButton.Name = "createRndExampleButton";
             this.createRndExampleButton.Size = new System.Drawing.Size(300, 30);
             this.createRndExampleButton.TabIndex = 3;
@@ -80,18 +86,21 @@
             // 
             // LogsTextField
             // 
+            this.LogsTextField.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LogsTextField.Location = new System.Drawing.Point(12, 81);
             this.LogsTextField.Multiline = true;
             this.LogsTextField.Name = "LogsTextField";
             this.LogsTextField.ReadOnly = true;
-            this.LogsTextField.Size = new System.Drawing.Size(776, 369);
+            this.LogsTextField.Size = new System.Drawing.Size(1010, 257);
             this.LogsTextField.TabIndex = 4;
             // 
             // DeleteFile_by_WordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 462);
+            this.ClientSize = new System.Drawing.Size(1030, 350);
             this.Controls.Add(this.LogsTextField);
             this.Controls.Add(this.createRndExampleButton);
             this.Controls.Add(this.sendButton);
@@ -99,10 +108,9 @@
             this.Controls.Add(this.addresTextField);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximumSize = new System.Drawing.Size(2500, 2500);
+            this.MinimumSize = new System.Drawing.Size(670, 211);
             this.Name = "DeleteFile_by_WordForm";
             this.Text = "Удаление фалов";
-            this.Load += new System.EventHandler(this.DeleteFile_by_WordForm_Load);
-            this.SizeChanged += new System.EventHandler(this.DeleteFile_by_WordForm_SizeChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

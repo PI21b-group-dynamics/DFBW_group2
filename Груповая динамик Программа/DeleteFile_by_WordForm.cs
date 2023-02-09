@@ -16,10 +16,6 @@ namespace Груповая_динамика_Программа
         {
             InitializeComponent();
         }
-        private void DeleteFile_by_WordForm_Load(object sender, EventArgs e)
-        {
-            DeleteFile_by_WordForm_SizeChanged(new object(), EventArgs.Empty);
-        }
 
         private void sendButton_Click(object sender, EventArgs e)
         {
@@ -39,11 +35,6 @@ namespace Груповая_динамика_Программа
                 }
 
             LogsTextField.Text = str;
-        }
-
-        private void DeleteFile_by_WordForm_SizeChanged(object sender, EventArgs e)
-        {
-            addresTextField.Width = this.Width - 30;
         }
 
         String PlaceholderTextAddrestTextField = "Дирректория для поиска";
