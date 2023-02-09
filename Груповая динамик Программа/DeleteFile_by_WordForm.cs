@@ -50,6 +50,8 @@ namespace Груповая_динамика_Программа
         private void createRndExampleButton_Click(object sender, EventArgs e)
         {
             Example ex = new Example();
+
+            wordTextField_Enter(new object(), new EventArgs());
             wordTextField.Text = ex.createRndExample(addresTextField.Text);
 
             MessageBox.Show("Было создано успешно создано " + ex.getCountFiles() + " тестовых файлов");
@@ -111,6 +113,7 @@ namespace Груповая_динамика_Программа
         {
             if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
+                addresTextField_Enter(new object(), new EventArgs());
                 addresTextField.Text = folderBrowserDialog1.SelectedPath;
             }
         }

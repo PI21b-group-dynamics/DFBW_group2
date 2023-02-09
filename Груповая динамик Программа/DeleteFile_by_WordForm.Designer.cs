@@ -88,7 +88,7 @@
             this.createRndExampleButton.Location = new System.Drawing.Point(801, 63);
             this.createRndExampleButton.Margin = new System.Windows.Forms.Padding(4);
             this.createRndExampleButton.Name = "createRndExampleButton";
-            this.createRndExampleButton.Size = new System.Drawing.Size(221, 30);
+            this.createRndExampleButton.Size = new System.Drawing.Size(221, 31);
             this.createRndExampleButton.TabIndex = 3;
             this.createRndExampleButton.Text = "Сгенерировать пример";
             this.createRndExampleButton.UseVisualStyleBackColor = true;
