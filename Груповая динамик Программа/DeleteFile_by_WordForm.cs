@@ -26,6 +26,10 @@ namespace Груповая_динамика_Программа
             addresTextField_Leave(new object(), new EventArgs());
 
         }
+        /*----PlaceholderText---*/
+
+        String PlaceholderTextAddrestTextField = "Дирректория для поиска";
+        String PlaceholderTextWordTextField = "Слово для удаления файла";
 
         private void sendButton_Click(object sender, EventArgs e)
         {
@@ -66,10 +70,7 @@ namespace Груповая_динамика_Программа
                     LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size - 1);
         }
 
-        /**----PlaceholderText---*/
-
-        String PlaceholderTextAddrestTextField = "Дирректория для поиска";
-        String PlaceholderTextWordTextField = "Слово для удаления файла";
+        
 
         ///Адресс
         private void addresTextField_Enter(object sender, EventArgs e)
@@ -121,6 +122,15 @@ namespace Груповая_динамика_Программа
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Разработанная программы-фильтр, предназначена для удаления файлов, в имени и/или содержимом которых встречается заданное слово/фраза\r\nВ первое текстовое поле вписывается адрес а во второе ключевое слово по которому будет идти поиск для последующего удаления.");
+        }
+
+        private void chooseFolder_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                addresTextField_Enter(new object(), new EventArgs());
+                addresTextField.Text = folderBrowserDialog1.SelectedPath;
+            }
         }
     }
 }   
