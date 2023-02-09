@@ -26,6 +26,8 @@ namespace Груповая_динамика_Программа
             addresTextField_Leave(new object(), new EventArgs());
 
             LogsTextField.Select();
+
+            folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory();
         }
         /*----PlaceholderText---*/
         bool YesTextAddres = false, YesTextWord = false;
