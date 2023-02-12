@@ -8,9 +8,12 @@ namespace Груповая_динамика_Программа
 {
     public class Example
     {
-        string rndWord;
-        int valueFile;
-        int valueFolder;
+        private string rndWord;
+        private int valueFile;
+        private int valueFolder;
+
+        public int CountFiles { get; set; }
+        public int CountDirectory { get; set; }
 
         public Example()
         {
@@ -19,29 +22,32 @@ namespace Груповая_динамика_Программа
             valueFolder = 0;
         }
 
-        public int getCountFiles() { return valueFile; }
-
         public string createRndExample(string path)
         {
             if (openDir(path))
             {
                 Random rnd = new Random();
-                valueFile = rnd.Next(10, 25);
+                valueFile = rnd.Next(10, 40);
                 valueFolder = rnd.Next(2, 5);
 
                 createRndWord();
 
-                for (int i = 0; i < valueFile; i++)
-                    createRndFiles(path);
-                for (int i = 0; i < valueFolder; i++)
-                    createRndDirectrory(path);
+                createRndFiles(path);
+
+                //for (int i = 0; i < valueFile; i++)
+                //    createRndFiles(path);
+
+                createRndDirectrory(path, 0);
+
+                //for (int i = 0; i < valueFolder; i++)
+                //    createRndDirectrory(path);
 
                 return rndWord;
             }
             return "";
         }
 
-        public bool openDir(string path)
+        protected bool openDir(string path)
         {
             if (!Directory.Exists(path))
             {
@@ -51,7 +57,7 @@ namespace Груповая_динамика_Программа
             return true;
         }
 
-        public void createRndWord()
+        private void createRndWord()
         {
             Random rnd = new Random();
             char rndChar;
@@ -64,18 +70,33 @@ namespace Груповая_динамика_Программа
             }
         }
 
-        bool ForCreate = false;
+        //bool ForCreate = false;
 
-        public void createRndFiles(string path)
+        private void createRndFiles(string path)
         {
-            string fileName = System.IO.Path.GetRandomFileName();
+            if (CountFiles >= 130) return;
+
+            string fileName = "";
             Random gen = new Random();
 
-            if (!ForCreate)
+            int Count = gen.Next(0, 100);
+            if (Count <= 30)
             {
-                fileName = rndWord;
-                ForCreate = true;
+                String RandExpansion = "";
+                int RandSizeExpansion = gen.Next(2, 5);
+                for (int i = 0; i < RandSizeExpansion; ++i)
+                    RandExpansion += (char)gen.Next('a', 'z');
+
+                fileName = rndWord + "." + RandExpansion;
+                //ForCreate = true;
+            } else
+            {
+                fileName = System.IO.Path.GetRandomFileName();
+
+                for (int l = 0; File.Exists(path + @"\" + fileName); l++)
+                    fileName = Path.GetRandomFileName();
             }
+
             StreamWriter sw = new StreamWriter(path + "\\" + fileName, true);
 
             int str = gen.Next(15, 150);
@@ -109,23 +130,49 @@ namespace Груповая_динамика_Программа
                 sw.WriteLine();
             }
             sw.Close();
+
+            CountFiles++;
+
+            if (gen.Next(0, 100) < 30)
+            {
+                createRndFiles(path);
+            }
         }
-        public void createRndDirectrory(string path)
+        private void createRndDirectrory(string path, int count_nesting)
         {
+            if (count_nesting > 3 || CountDirectory >= 15) return;
+
             Random gen = new Random();
             string spath;
             for (int i = gen.Next(2, 5); i > 0; i--)
             {
                 spath = path + "\\" + createRndWord("");
+
+                for(int l = 0; Directory.Exists(spath) && l < 1000; l++)
+                {
+                    spath = path + "\\" + createRndWord("");
+
+                    if (l + 1 == 1000)
+                        return;
+                }
+
+
                 Directory.CreateDirectory(spath);
                 createRndFiles(spath);
-            }
 
+
+                CountDirectory++;
+
+                if (gen.Next(0, 100) <= 25)
+                {
+                    createRndDirectrory(spath, ++count_nesting);
+                }
+            }
         }
-        public string createRndWord(string result)
+        protected string createRndWord(string result)
         {
             Random rnd = new Random();
-            for (int i = rnd.Next(7, 19); i > 0; i--)
+            for (int i = rnd.Next(2, 19); i > 0; i--)
                 result += (char)rnd.Next('a', 'z'); ;
             return result;
         }

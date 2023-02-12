@@ -83,7 +83,7 @@
             this.createRndExampleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.createRndExampleButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.createRndExampleButton.Location = new System.Drawing.Point(801, 52);
-            this.createRndExampleButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createRndExampleButton.Margin = new System.Windows.Forms.Padding(4);
             this.createRndExampleButton.Name = "createRndExampleButton";
             this.createRndExampleButton.Size = new System.Drawing.Size(221, 38);
             this.createRndExampleButton.TabIndex = 3;
@@ -116,7 +116,7 @@
             this.chooseFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chooseFolder.Image = global::Груповая_динамика_Программа.Properties.Resources.open_folder;
             this.chooseFolder.Location = new System.Drawing.Point(713, 11);
-            this.chooseFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chooseFolder.Margin = new System.Windows.Forms.Padding(4);
             this.chooseFolder.Name = "chooseFolder";
             this.chooseFolder.Size = new System.Drawing.Size(52, 36);
             this.chooseFolder.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.helpButton.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.helpButton.Location = new System.Drawing.Point(801, 11);
-            this.helpButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(4);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(221, 36);
             this.helpButton.TabIndex = 7;

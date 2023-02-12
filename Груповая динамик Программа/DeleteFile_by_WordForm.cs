@@ -59,7 +59,13 @@ namespace Груповая_динамика_Программа
             wordTextField_Enter(new object(), new EventArgs());
             wordTextField.Text = ex.createRndExample(addresTextField.Text);
 
-            MessageBox.Show("Было создано успешно создано " + ex.getCountFiles() + " тестовых файлов");
+            MessageBox.Show
+                (
+                "Было создано успешно создано\n" + "Файлов: " + ex.CountFiles + "\nДиректорий: " + ex.CountDirectory, 
+                "Оповещение", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Question
+                );
         }
 
         private void MouseWheelLogsTextField(object obj, MouseEventArgs e)

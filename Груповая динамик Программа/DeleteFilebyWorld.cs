@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -12,6 +13,8 @@ namespace Груповая_динамика_Программа
         string Word;
 
         private List<string> Logs = new List<string>();
+
+        public int CountDeleteFiles { get; set; }
 
         public List<string> DeleteByWord(string start_path, string word)
         {
@@ -30,6 +33,11 @@ namespace Груповая_динамика_Программа
 
             searh_and_Delete_Files(start_path);
 
+            if (CountDeleteFiles > 0)
+                Logs.Add("Всего было удалено: " + CountDeleteFiles);
+            else
+                Logs.Add("Небыло найдено файлов соответствующий данному слову");
+
             return Logs;
         }
 
@@ -43,9 +51,7 @@ namespace Груповая_динамика_Программа
                 {
                     if (getFileNameWithoutExtension(file.Name) == Word)
                     {
-                        String prom = file.Name;
-                        file.Delete(); //MessageBox.Show("Файл : " + file.FullName + " соответствует.");
-                        Logs.Add("Файл: " + prom + " был успешно удален. Причина: Соотвествие по имени.");
+                        DeleteFile(file, "Соотвествие по имени");
                     }
                     else
                         search_in_Data_File(file);
@@ -71,14 +77,36 @@ namespace Груповая_динамика_Программа
                     {
                         read.Close();
 
-                        String prom = file.Name;
-                        file.Delete();
-                        Logs.Add("Файл: " + prom + " был успешно удален. Причина: Строка: " + CountStr + " содержит данное слово.");
+                        DeleteFile(file, "Сеодержит данное слово");
                         break;
                     }
                 }
             }
         } //Поиск слова в файле
+
+        private void DeleteFile(FileInfo file, String reason)
+        {
+            String NameFile = "";
+            String PathFile = "";
+
+            try
+            {
+                NameFile = file.Name;
+                PathFile = file.FullName;
+                file.Delete();
+
+            } catch(IOException ex) 
+            {
+                MessageBox.Show(ex.Message);
+                Logs.Add(ex.Message);
+                return;
+            }
+            
+            Logs.Add("Файл: " + NameFile + " был успешно удален. Причина: " + reason + ".");
+            Logs.Add("Полный путь: " + PathFile + "\r\n");
+
+            CountDeleteFiles++;
+        }
 
         protected string getFileNameWithoutExtension(string fullFileName)
         {
