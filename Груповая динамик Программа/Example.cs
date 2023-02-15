@@ -24,7 +24,7 @@ namespace Груповая_динамика_Программа
 
         public string createRndExample(string path)
         {
-            if (openDir(path))
+            if (Directory.Exists(path))
             {
                 Random rnd = new Random();
                 valueFile = rnd.Next(10, 40);
@@ -44,17 +44,10 @@ namespace Груповая_динамика_Программа
 
                 return rndWord;
             }
-            return "";
-        }
+            else 
+                throw new DirectoryNotFoundException("Данной дериктории не существует!");
 
-        protected bool openDir(string path)
-        {
-            if (!Directory.Exists(path))
-            {
-                MessageBox.Show("Данной директории не существует!");
-                return false;
-            }
-            return true;
+            return "";
         }
 
         private void createRndWord()

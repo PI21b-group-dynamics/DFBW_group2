@@ -24,19 +24,46 @@ namespace Груповая_динамика_Программа
 
             wordTextField_Leave(new object(), new EventArgs());
             addresTextField_Leave(new object(), new EventArgs());
+
             LogsTextField.Select();
         }
         /*----PlaceholderText---*/
-
+        bool YesTextAddres = false, YesTextWord = false;
         String PlaceholderTextAddrestTextField = "Дирректория для поиска";
         String PlaceholderTextWordTextField = "Слово для удаления файла";
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Файлы соответствующие введенному \r\nслову будут удалены. " +
-                "\r\nВы хотите продолжить?", "Уведомление", MessageBoxButtons.YesNo) == DialogResult.No) return;
 
-            sendText_in_LogsField(new DeleteFilebyWorld().DeleteByWord(addresTextField.Text, wordTextField.Text));
+            if(!YesTextAddres)
+            {
+                MessageBox.Show("Строка адресса пустая!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return;
+            } 
+            else if(!YesTextWord)
+            {
+                MessageBox.Show("Строка слова пустая!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return;
+            }
+
+            if (
+                MessageBox.Show (
+                "Файлы соответствующие введенному слову будут удалены.\r\n" + "Вы хотите продолжить?", 
+                "Предупреждение", 
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Warning
+                ) == DialogResult.No
+                ) return;
+
+            try
+            {
+                sendText_in_LogsField(new DeleteFilebyWorld().DeleteByWord(addresTextField.Text, wordTextField.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void sendText_in_LogsField(List<string> list)
@@ -54,10 +81,27 @@ namespace Груповая_динамика_Программа
 
         private void createRndExampleButton_Click(object sender, EventArgs e)
         {
+
+            if (!YesTextAddres)
+            {
+                MessageBox.Show("Строка адресса пустая!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return;
+            }
+
             Example ex = new Example();
 
-            wordTextField_Enter(new object(), new EventArgs());
-            wordTextField.Text = ex.createRndExample(addresTextField.Text);
+
+            try
+            {
+                String word = ex.createRndExample(addresTextField.Text);
+                wordTextField_Enter(new object(), new EventArgs());
+                wordTextField.Text = word;
+            }
+            catch (DirectoryNotFoundException exep) 
+            { 
+                MessageBox.Show(exep.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             MessageBox.Show
                 (
@@ -82,7 +126,9 @@ namespace Груповая_динамика_Программа
         ///Адресс
         private void addresTextField_Enter(object sender, EventArgs e)
         {
-            if (addresTextField.Text.Length != 0 && !addresTextField.Text.Equals(PlaceholderTextAddrestTextField)) return;
+            if (YesTextAddres) return;
+
+            YesTextAddres = true;
 
             addresTextField.Text = "";
 
@@ -91,7 +137,9 @@ namespace Груповая_динамика_Программа
 
         private void addresTextField_Leave(object sender, EventArgs e)
         {
-            if (addresTextField.Text.Length != 0) return;
+            if(addresTextField.Text.Length != 0) return;
+
+            YesTextAddres = false;
 
             addresTextField.Text = PlaceholderTextAddrestTextField;
 
@@ -101,7 +149,9 @@ namespace Груповая_динамика_Программа
         ///Слово
         private void wordTextField_Enter(object sender, EventArgs e)
         {
-            if (wordTextField.Text.Length != 0 && !wordTextField.Text.Equals(PlaceholderTextWordTextField)) return;
+            if(YesTextWord) return;
+
+            YesTextWord = true;
 
             wordTextField.Text = "";
 
@@ -110,7 +160,9 @@ namespace Груповая_динамика_Программа
 
         private void wordTextField_Leave(object sender, EventArgs e)
         {
-            if (wordTextField.Text.Length != 0) return;
+            if(wordTextField.Text.Length != 0) return;
+
+            YesTextWord = false;
 
             wordTextField.Text = PlaceholderTextWordTextField;
 
@@ -136,7 +188,7 @@ namespace Груповая_динамика_Программа
             MessageBox.Show("Разработанная программы-фильтр, предназначена для удаления файлов, " +
                 "в имени и/или содержимом которых встречается заданное слово/фраза\r\n" +
                 "В первое текстовое поле вписывается адрес а во второе ключевое слово по " +
-                "которому будет идти поиск для последующего удаления.");
+                "которому будет идти поиск для последующего удаления.", "Справка");
         }
     }
 }   
