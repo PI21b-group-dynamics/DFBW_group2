@@ -25,7 +25,7 @@ namespace Груповая_динамика_Программа
             }
             if(word == null || word.Length == 0)
             {
-                MessageBox.Show("Слово поиска, пустое!");
+                MessageBox.Show("Слово поиска - пустое!");
                 return null;
             }
 
@@ -36,7 +36,7 @@ namespace Груповая_динамика_Программа
             if (CountDeleteFiles > 0)
                 Logs.Add("Всего было удалено: " + CountDeleteFiles);
             else
-                Logs.Add("Небыло найдено файлов соответствующий данному слову");
+                Logs.Add("Не было найдено файлов, которые соответствовали бы данному слову(фразе).");
 
             return Logs;
         }
@@ -51,7 +51,7 @@ namespace Груповая_динамика_Программа
                 {
                     if (getFileNameWithoutExtension(file.Name) == Word)
                     {
-                        DeleteFile(file, "Соотвествие по имени");
+                        DeleteFile(file, "Соотвествие по имени.");
                     }
                     else
                         search_in_Data_File(file);
