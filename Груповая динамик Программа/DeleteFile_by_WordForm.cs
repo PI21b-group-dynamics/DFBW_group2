@@ -169,11 +169,6 @@ namespace Груповая_динамика_Программа
             wordTextField.ForeColor = Color.Gray;
         }
 
-        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Разработанная программа-фильтр предназначена для удаления файлов, в имени и/или содержимом которых встречается заданное слово/фраза.\r\nВ первое текстовое поле вписывается адрес(путь к директории), а во второе - ключевое слово, по которому будет идти поиск для последующего удаления.");
-        }
-
         private void chooseFolder_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)

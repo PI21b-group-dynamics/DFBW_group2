@@ -21,7 +21,7 @@ namespace Груповая_динамика_Программа
             if (!Directory.Exists(start_path))
                 throw new DirectoryNotFoundException("Данной дериктории не существует!");
             if (word == null || word.Length == 0)
-                throw new FormatException("Слово поиска, пустое!");
+                throw new FormatException("Слово поиска - пустое!");
 
             Word = word;
 
@@ -30,7 +30,7 @@ namespace Груповая_динамика_Программа
             if (CountDeleteFiles > 0)
                 Logs.Add("Всего было удалено: " + CountDeleteFiles);
             else
-                Logs.Add("Небыло найдено файлов соответствующий данному слову.");
+                Logs.Add("Не было найдено файлов, которые соответствовали бы данному слову(фразе).");
 
             return Logs;
         }
@@ -71,7 +71,7 @@ namespace Груповая_динамика_Программа
                     {
                         read.Close();
 
-                        DeleteFile(file, "Содержит данное слово");
+                        DeleteFile(file, "Содержит данное слово.");
                         break;
                     }
                 }
