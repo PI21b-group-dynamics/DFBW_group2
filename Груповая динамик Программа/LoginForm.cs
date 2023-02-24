@@ -22,6 +22,9 @@ namespace Груповая_динамика_Программа
         {
             InitializeComponent();
             DialogResult = DialogResult.Cancel;
+
+            Password_One_TextBox.KeyPress += Entry_ban;
+            Password_Two_TextBox.KeyPress += Entry_ban;
         }
 
         private void LoginOrRegistrationButton_Click(object sender, EventArgs e)
@@ -200,6 +203,15 @@ namespace Груповая_динамика_Программа
         {
             ForLogin = !ForLogin;
             Set_display();
+        }
+
+        private void Entry_ban(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == '*' || e.KeyChar == ' ')
+            {
+                e.Handled = true;
+                return;
+            }
         }
 
     }
