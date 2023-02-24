@@ -153,7 +153,16 @@ namespace Груповая_динамика_Программа
 
                 using (var fs = new FileStream(@"DataUsers\Users.xml", FileMode.Open))
                 {
-                    return xmlSerializer.Deserialize(fs) as List<UserData>;
+                    try
+                    {
+                        return xmlSerializer.Deserialize(fs) as List<UserData>;
+                    }
+                    catch (System.InvalidOperationException ex)
+                    {
+                        MessageBox.Show(ex.Message + "\nБыл создан новый файл.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        fs.Close();
+                        File.Delete("DataUsers\\Users.xml");
+                    }
                 }
 
             }

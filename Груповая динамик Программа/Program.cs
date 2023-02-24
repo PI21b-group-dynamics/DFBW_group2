@@ -23,6 +23,8 @@ namespace Груповая_динамика_Программа
             DeleteFile_by_WordForm dtForm = new DeleteFile_by_WordForm();
             dtForm.userData = LF.userData;
 
+            LF.Dispose();
+
             Application.Run(dtForm);
 
             //Application.Run(new LoginForm());
