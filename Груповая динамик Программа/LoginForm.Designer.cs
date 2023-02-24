@@ -152,7 +152,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginTextBox);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Регистрация/Авторизация";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,9 +16,16 @@ namespace Груповая_динамика_Программа
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (new LoginForm().ShowDialog() == DialogResult.Cancel) return;
+
+            LoginForm LF = new LoginForm();
+            if (LF.ShowDialog() == DialogResult.Cancel) return;
+
+            DeleteFile_by_WordForm dtForm = new DeleteFile_by_WordForm();
+            dtForm.userData = LF.userData;
+
+            Application.Run(dtForm);
+
             //Application.Run(new LoginForm());
-            Application.Run(new DeleteFile_by_WordForm());
         }
     }
 }

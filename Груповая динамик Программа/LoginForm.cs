@@ -18,6 +18,8 @@ namespace Груповая_динамика_Программа
     {
         private bool ForLogin = true;
 
+        public UserData userData { get; set; }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -71,6 +73,8 @@ namespace Груповая_динамика_Программа
 
                 DialogResult = DialogResult.OK;
 
+                userData = UserByForm;
+
                 this.Close();
             }
             else
@@ -103,6 +107,8 @@ namespace Груповая_динамика_Программа
                 MessageBox.Show("Вы были успешно зарегестрированы!", "Оповещение", MessageBoxButtons.OK, MessageBoxIcon.Question);
 
                 DialogResult = DialogResult.OK;
+                
+                userData = UserByForm;
 
                 this.Close();
             }
@@ -132,14 +138,6 @@ namespace Груповая_динамика_Программа
                     return false;
             }
         }
-
-        //private bool CheckUserByList(List<UserData> users, UserData user)
-        //{
-        //    foreach(UserData userD in users)
-        //        if(userD.Equals(user)) return true;
-
-        //    return false;
-        //}
 
         private List<UserData> GetUsersData_by_Deserealize()
         {

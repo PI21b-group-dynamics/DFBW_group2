@@ -13,6 +13,9 @@ namespace Груповая_динамика_Программа
 {
     public partial class DeleteFile_by_WordForm : Form
     {
+
+        public LoginForm.UserData userData;
+
         public DeleteFile_by_WordForm()
         {
             InitializeComponent();
@@ -29,6 +32,7 @@ namespace Груповая_динамика_Программа
 
             folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory();
         }
+
         /*----PlaceholderText---*/
         bool YesTextAddres = false, YesTextWord = false;
         String PlaceholderTextAddrestTextField = "Дирректория для поиска";
@@ -59,7 +63,9 @@ namespace Груповая_динамика_Программа
 
             try
             {
-                sendText_in_LogsField(new DeleteFilebyWorld().DeleteByWord(addresTextField.Text, wordTextField.Text));
+                List<string> Logs = new DeleteFilebyWorld().DeleteByWord(addresTextField.Text, wordTextField.Text);
+                sendText_in_LogsField(Logs);
+                SendTextInLogsHistoryFile(Logs);
             }
             catch (Exception ex)
             {
@@ -79,6 +85,27 @@ namespace Груповая_динамика_Программа
                 }
 
             LogsTextField.Text = str;
+        }
+
+        private void SendTextInLogsHistoryFile(List<string> list)
+        {
+            String str = "";
+
+            if (list != null && list.Count > 0)
+                foreach (string item in list)
+                {
+                    str += item + "\n";
+                }
+
+            if (!Directory.Exists(@"DataUsers\Users History")) 
+                Directory.CreateDirectory(@"DataUsers\Users History");
+
+            using (StreamWriter sw = new StreamWriter(@"DataUsers\Users History\" + userData.NameUser + "_history.txt", true))
+            {
+                sw.WriteLine(DateTime.Now);
+                sw.WriteLine(str);
+            }
+
         }
 
         private void createRndExampleButton_Click(object sender, EventArgs e)
