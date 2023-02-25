@@ -45,7 +45,7 @@ namespace Груповая_динамика_Программа
                 {
                     if (getFileNameWithoutExtension(file.Name) == Word)
                     {
-                        DeleteFile(file, "Соотвествие по имени.");
+                        DeleteFile(file, "Соотвествие по имени");
                     }
                     else
                         search_in_Data_File(file);
@@ -71,7 +71,7 @@ namespace Груповая_динамика_Программа
                     {
                         read.Close();
 
-                        DeleteFile(file, "Содержит данное слово.");
+                        DeleteFile(file, "Содержит данное слово");
                         break;
                     }
                 }

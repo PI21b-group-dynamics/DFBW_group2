@@ -103,6 +103,7 @@ namespace Груповая_динамика_Программа
             using (StreamWriter sw = new StreamWriter(@"DataUsers\Users History\" + userData.NameUser + "_history.txt", true))
             {
                 sw.WriteLine(DateTime.Now);
+                sw.WriteLine("Произведен поиск по слову: " + wordTextField.Text + "\n");
                 sw.WriteLine(str);
             }
 
