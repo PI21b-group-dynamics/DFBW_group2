@@ -32,9 +32,14 @@ namespace Груповая_динамика_Программа
 
         private void LoginOrRegistrationButton_Click(object sender, EventArgs e)
         {
+            if (LoginTextBox.Text.Equals("") || Password_One_TextBox.Text.Equals(""))
+            {
+                MessageBox.Show("Поле ввода пусто!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!Regex.Match(LoginTextBox.Text, @"^\w*$").Success)
             {
-                MessageBox.Show("Логин введен некорректно!\nРазрешены буквы, цифры и символ нижнего подчеркивания", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Логин введен некорректно!\nРазрешены буквы, цифры и символ нижнего подчеркивания.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LoginTextBox.Focus();
                 return;
             }
