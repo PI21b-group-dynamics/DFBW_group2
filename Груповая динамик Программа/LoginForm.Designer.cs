@@ -44,18 +44,20 @@
             this.LoginTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginTextBox.Location = new System.Drawing.Point(12, 88);
+            this.LoginTextBox.Location = new System.Drawing.Point(9, 72);
+            this.LoginTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoginTextBox.Name = "LoginTextBox";
-            this.LoginTextBox.Size = new System.Drawing.Size(320, 30);
+            this.LoginTextBox.Size = new System.Drawing.Size(241, 26);
             this.LoginTextBox.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 26);
+            this.label1.Size = new System.Drawing.Size(165, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Регистрация / Вход";
             // 
@@ -63,9 +65,10 @@
             // 
             this.Login_lable.AutoSize = true;
             this.Login_lable.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Login_lable.Location = new System.Drawing.Point(12, 66);
+            this.Login_lable.Location = new System.Drawing.Point(9, 54);
+            this.Login_lable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Login_lable.Name = "Login_lable";
-            this.Login_lable.Size = new System.Drawing.Size(84, 19);
+            this.Login_lable.Size = new System.Drawing.Size(71, 16);
             this.Login_lable.TabIndex = 2;
             this.Login_lable.Text = "Ваш логин";
             // 
@@ -74,19 +77,21 @@
             this.Password_One_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Password_One_TextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Password_One_TextBox.Location = new System.Drawing.Point(12, 143);
+            this.Password_One_TextBox.Location = new System.Drawing.Point(9, 116);
+            this.Password_One_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Password_One_TextBox.Name = "Password_One_TextBox";
-            this.Password_One_TextBox.Size = new System.Drawing.Size(320, 30);
+            this.Password_One_TextBox.Size = new System.Drawing.Size(241, 26);
             this.Password_One_TextBox.TabIndex = 3;
-            this.Password_One_TextBox.Text = " ";
+            this.Password_One_TextBox.Text = "";
             // 
             // Password_One_lable
             // 
             this.Password_One_lable.AutoSize = true;
             this.Password_One_lable.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Password_One_lable.Location = new System.Drawing.Point(12, 121);
+            this.Password_One_lable.Location = new System.Drawing.Point(9, 98);
+            this.Password_One_lable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Password_One_lable.Name = "Password_One_lable";
-            this.Password_One_lable.Size = new System.Drawing.Size(92, 19);
+            this.Password_One_lable.Size = new System.Drawing.Size(77, 16);
             this.Password_One_lable.TabIndex = 4;
             this.Password_One_lable.Text = "Ваш пароль";
             // 
@@ -95,19 +100,21 @@
             this.Password_Two_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Password_Two_TextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Password_Two_TextBox.Location = new System.Drawing.Point(12, 198);
+            this.Password_Two_TextBox.Location = new System.Drawing.Point(9, 161);
+            this.Password_Two_TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Password_Two_TextBox.Name = "Password_Two_TextBox";
-            this.Password_Two_TextBox.Size = new System.Drawing.Size(320, 30);
+            this.Password_Two_TextBox.Size = new System.Drawing.Size(241, 26);
             this.Password_Two_TextBox.TabIndex = 5;
-            this.Password_Two_TextBox.Text = " ";
+            this.Password_Two_TextBox.Text = "";
             // 
             // Password_Two_lable
             // 
             this.Password_Two_lable.AutoSize = true;
             this.Password_Two_lable.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Password_Two_lable.Location = new System.Drawing.Point(12, 176);
+            this.Password_Two_lable.Location = new System.Drawing.Point(9, 143);
+            this.Password_Two_lable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Password_Two_lable.Name = "Password_Two_lable";
-            this.Password_Two_lable.Size = new System.Drawing.Size(137, 19);
+            this.Password_Two_lable.Size = new System.Drawing.Size(112, 16);
             this.Password_Two_lable.TabIndex = 6;
             this.Password_Two_lable.Text = "Повторите пароль";
             // 
@@ -117,9 +124,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginOrRegistrationButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginOrRegistrationButton.Location = new System.Drawing.Point(16, 253);
+            this.LoginOrRegistrationButton.Location = new System.Drawing.Point(12, 206);
+            this.LoginOrRegistrationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoginOrRegistrationButton.Name = "LoginOrRegistrationButton";
-            this.LoginOrRegistrationButton.Size = new System.Drawing.Size(316, 38);
+            this.LoginOrRegistrationButton.Size = new System.Drawing.Size(237, 31);
             this.LoginOrRegistrationButton.TabIndex = 7;
             this.LoginOrRegistrationButton.Text = "Регистрация";
             this.LoginOrRegistrationButton.UseVisualStyleBackColor = true;
@@ -129,9 +137,10 @@
             // 
             this.ChangeLoginOrRegistationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ChangeLoginOrRegistationButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChangeLoginOrRegistationButton.Location = new System.Drawing.Point(236, 6);
+            this.ChangeLoginOrRegistationButton.Location = new System.Drawing.Point(177, 5);
+            this.ChangeLoginOrRegistationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ChangeLoginOrRegistationButton.Name = "ChangeLoginOrRegistationButton";
-            this.ChangeLoginOrRegistationButton.Size = new System.Drawing.Size(96, 32);
+            this.ChangeLoginOrRegistationButton.Size = new System.Drawing.Size(72, 26);
             this.ChangeLoginOrRegistationButton.TabIndex = 8;
             this.ChangeLoginOrRegistationButton.Text = "Смена";
             this.ChangeLoginOrRegistationButton.UseVisualStyleBackColor = true;
@@ -139,9 +148,9 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 311);
+            this.ClientSize = new System.Drawing.Size(260, 253);
             this.Controls.Add(this.ChangeLoginOrRegistationButton);
             this.Controls.Add(this.LoginOrRegistrationButton);
             this.Controls.Add(this.Password_Two_lable);
@@ -151,6 +160,7 @@
             this.Controls.Add(this.Login_lable);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginTextBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginForm";
             this.Text = "Регистрация/Авторизация";
             this.Load += new System.EventHandler(this.LoginForm_Load);
