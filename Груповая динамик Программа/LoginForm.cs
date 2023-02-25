@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -31,6 +32,12 @@ namespace Груповая_динамика_Программа
 
         private void LoginOrRegistrationButton_Click(object sender, EventArgs e)
         {
+            if (!Regex.Match(LoginTextBox.Text, @"^\w*$").Success)
+            {
+                MessageBox.Show("Логин введен некорректно!\nРазрешены буквы, цифры и символ нижнего подчеркивания", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoginTextBox.Focus();
+                return;
+            }
 
             UserData UserByForm = new UserData(LoginTextBox.Text, Password_One_TextBox.Text);
 
