@@ -49,6 +49,7 @@
             this.addresTextField.Name = "addresTextField";
             this.addresTextField.Size = new System.Drawing.Size(693, 34);
             this.addresTextField.TabIndex = 0;
+            this.addresTextField.DoubleClick += new System.EventHandler(this.addresTextField_DoubleClick);
             this.addresTextField.Enter += new System.EventHandler(this.addresTextField_Enter);
             this.addresTextField.Leave += new System.EventHandler(this.addresTextField_Leave);
             // 

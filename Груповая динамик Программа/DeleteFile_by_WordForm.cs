@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -206,6 +207,13 @@ namespace Груповая_динамика_Программа
                 addresTextField_Enter(new object(), new EventArgs());
                 addresTextField.Text = folderBrowserDialog1.SelectedPath;
             }
+        }
+
+        private void addresTextField_DoubleClick(object sender, EventArgs e)
+        {
+            if (addresTextField.Text.Length == 0) return;
+
+            Process.Start("explorer.exe", addresTextField.Text);
         }
 
         private void helpButton_Click(object sender, EventArgs e)

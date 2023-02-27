@@ -8,39 +8,22 @@ namespace Груповая_динамика_Программа
 {
     public class Example
     {
-        private string rndWord;
-        private int valueFile;
-        private int valueFolder;
+        private string rndWord = "";
 
         public int CountFiles { get; set; }
         public int CountDirectory { get; set; }
-
-        public Example()
-        {
-            rndWord = "";
-            valueFile = 0;
-            valueFolder = 0;
-        }
 
         public string createRndExample(string path)
         {
             if (Directory.Exists(path))
             {
                 Random rnd = new Random();
-                valueFile = rnd.Next(10, 40);
-                valueFolder = rnd.Next(2, 5);
 
                 createRndWord();
 
                 createRndFiles(path);
 
-                //for (int i = 0; i < valueFile; i++)
-                //    createRndFiles(path);
-
                 createRndDirectrory(path, 0);
-
-                //for (int i = 0; i < valueFolder; i++)
-                //    createRndDirectrory(path);
 
                 return rndWord;
             }
@@ -63,8 +46,6 @@ namespace Груповая_динамика_Программа
             }
         }
 
-        //bool ForCreate = false;
-
         private void createRndFiles(string path)
         {
             if (CountFiles >= 130) return;
@@ -81,7 +62,6 @@ namespace Груповая_динамика_Программа
                     RandExpansion += (char)gen.Next('a', 'z');
 
                 fileName = rndWord + "." + RandExpansion;
-                //ForCreate = true;
             } else
             {
                 fileName = System.IO.Path.GetRandomFileName();
