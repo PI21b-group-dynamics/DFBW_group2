@@ -28,7 +28,7 @@ namespace Груповая_динамика_Программа
                 return rndWord;
             }
             else 
-                throw new DirectoryNotFoundException("Данной дериктории не существует!");
+                throw new DirectoryNotFoundException("Данной дериктории не существует!!!");
 
             return "";
         }
@@ -145,7 +145,7 @@ namespace Груповая_динамика_Программа
         protected string createRndWord(string result)
         {
             Random rnd = new Random();
-            for (int i = rnd.Next(2, 19); i > 0; i--)
+            for (int i = rnd.Next(2, 18); i > 0; i--)
                 result += (char)rnd.Next('a', 'z'); ;
             return result;
         }
