@@ -37,7 +37,7 @@ namespace Груповая_динамика_Программа
                 MessageBox.Show("Поле ввода пусто!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!Regex.Match(LoginTextBox.Text, @"^\%*$~`").Success)
+            if (!Regex.Match(LoginTextBox.Text, @"^\w*$").Success)
             {
                 MessageBox.Show("Логин введен некорректно!!!\nРазрешены буквы, цифры и символ нижнего подчеркивания.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LoginTextBox.Focus();
