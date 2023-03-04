@@ -44,19 +44,19 @@ namespace Груповая_динамика_Программа
 
             if(!YesTextAddres)
             {
-                MessageBox.Show("Строка адресса пустая!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Строка адресса пустая!!!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 return;
             } 
             else if(!YesTextWord)
             {
-                MessageBox.Show("Строка слова пустая!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Строка слова пустая!!!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 return;
             }
 
             if (
                 MessageBox.Show (
                 "Файлы соответствующие введенному слову будут удалены.\r\n" + "Вы хотите продолжить?", 
-                "Предупреждение", 
+                "Предупреждение!", 
                 MessageBoxButtons.YesNo, 
                 MessageBoxIcon.Warning
                 ) == DialogResult.No
@@ -70,7 +70,7 @@ namespace Груповая_динамика_Программа
             }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("" + ex.Message, "Ошибка!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -115,7 +115,7 @@ namespace Груповая_динамика_Программа
 
             if (!YesTextAddres)
             {
-                MessageBox.Show("Строка адресса пустая!", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Строка адресса пустая!!!", "Уведомление.", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 return;
             }
 
@@ -136,7 +136,7 @@ namespace Груповая_динамика_Программа
 
             MessageBox.Show
                 (
-                "Было создано успешно создано\n" + "Файлов: " + ex.CountFiles + "\nДиректорий: " + ex.CountDirectory, 
+                "Было успешно создано:\n" + "Файлов: " + ex.CountFiles + "\nДиректорий: " + ex.CountDirectory, 
                 "Оповещение", 
                 MessageBoxButtons.OK, 
                 MessageBoxIcon.Question
@@ -218,7 +218,7 @@ namespace Груповая_динамика_Программа
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("                       Справка\r\n" +
+           MessageBox.Show("                       Справка\r\n" +
 
                 " Разработанная программа-фильтр предназначена для удаления файлов, " +
                 "в имени и/или содержимом которых встречается заданное слово/фраза.\r\n" +
@@ -226,7 +226,12 @@ namespace Груповая_динамика_Программа
                 "которому будет идти поиск для последующего удаления.\r\n" +
                 " Роли:\n"+
                 "  Пользователь - управляет работой программного продукта с целью удаления файлов при фильтрации слов.\n" +
-                "  Администратор - может просматривать все списки удаленных файлов.\n"
+                "  Администратор - может просматривать все списки удаленных файлов.\n" +
+                "В создании программы учавствовали: \n" +
+                "  Георгий Бубнов - лидер команды.\n  Егор Панков - разработчик основного блока.\n  Влад Зосимов - тестировщик и делопроизводитель.\n" +
+                "  Олег Васильченко - разработчик дополнительного блока.\n  Влад Ищенко - дизайнер интерфейса.\n" +
+                "Программа для поиска и удаления файлов по ключевым словам.\n" +
+                "© Все права защищены. 2023 год."
                 );
         }
     }
