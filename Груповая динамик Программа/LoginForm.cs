@@ -34,12 +34,12 @@ namespace Груповая_динамика_Программа
         {
             if (LoginTextBox.Text.Equals("") || Password_One_TextBox.Text.Equals(""))
             {
-                MessageBox.Show("Поле ввода пусто!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Поле ввода пусто!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (!Regex.Match(LoginTextBox.Text, @"^\w*$").Success)
+            if (!Regex.Match(LoginTextBox.Text, @"^\%*$~`").Success)
             {
-                MessageBox.Show("Логин введен некорректно!\nРазрешены буквы, цифры и символ нижнего подчеркивания.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Логин введен некорректно!!!\nРазрешены буквы, цифры и символ нижнего подчеркивания.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LoginTextBox.Focus();
                 return;
             }
@@ -71,7 +71,7 @@ namespace Груповая_динамика_Программа
 
                 if (UsersData == null || !RealUser)
                 {
-                    MessageBox.Show("Такого пользователя не существует, зарегестрируйтесь!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Такого пользователя не существует, зарегестрируйтесь!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ForLogin = false;
                     Set_display();
                     return;
@@ -79,7 +79,7 @@ namespace Груповая_динамика_Программа
                 
                 if(!ToAcceptPassword)
                 {
-                    MessageBox.Show("Не верный пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Введён неверный пароль!!!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -94,13 +94,13 @@ namespace Груповая_динамика_Программа
 
                 if(!Password_One_TextBox.Text.Equals(Password_Two_TextBox.Text))
                 {
-                    MessageBox.Show("Пароли не равны!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Пароли не совпадают!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 if (RealUser)
                 {
-                    MessageBox.Show("Имя пользователя уже занято, выбирите другое имя!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Данное имя пользователя уже занято, выберите другое имя!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -116,7 +116,7 @@ namespace Груповая_динамика_Программа
                     xmlSerializer.Serialize(fs, UsersData);
                 }
 
-                MessageBox.Show("Вы были успешно зарегестрированы!", "Оповещение", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Вы успешно зарегестрировались!", "Оповещение.", MessageBoxButtons.OK, MessageBoxIcon.Question);
 
                 DialogResult = DialogResult.OK;
                 
@@ -171,7 +171,7 @@ namespace Груповая_динамика_Программа
                     }
                     catch (System.InvalidOperationException ex)
                     {
-                        MessageBox.Show(ex.Message + "\nБыл создан новый файл.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message + "\nБыл создан новый файл.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         fs.Close();
                         File.Delete("DataUsers\\Users.xml");
                     }
@@ -187,8 +187,8 @@ namespace Груповая_динамика_Программа
 
             if(ForLogin)
             {
-                Login_lable.Text = "Ваш логин";
-                Password_One_lable.Text = "Ваш пароль";
+                Login_lable.Text = "Введите ваш логин";
+                Password_One_lable.Text = "Введите ваш пароль";
                 Password_Two_lable.Visible = false;
 
                 Password_Two_TextBox.Visible = false;
