@@ -44,22 +44,25 @@ namespace Груповая_динамика_Программа
                 return;
             }
 
-            UserData UserByForm = new UserData(LoginTextBox.Text, Password_One_TextBox.Text);
+            UserData UserByForm = new UserData(LoginTextBox.Text, Password_One_TextBox.Text, false);
 
             List<UserData> UsersData = GetUsersData_by_Deserealize();
 
             bool RealUser = false, ToAcceptPassword = false;
+            int PositionByList = -1;
 
             if (UsersData != null)
             {
-                foreach (UserData userD in UsersData)
+                for (int i = 0; i < UsersData.Count; ++i)
                 {
-                    if (userD.NameUser.Equals(UserByForm.NameUser))
+                    if (UsersData[i].NameUser.Equals(UserByForm.NameUser))
                     {
                         RealUser = true;
 
-                        if (userD.PasswordUser.Equals(UserByForm.PasswordUser))
+                        if (UsersData[i].PasswordUser.Equals(UserByForm.PasswordUser))
                             ToAcceptPassword = true;
+
+                        PositionByList = i;
 
                         break;
                     }
@@ -83,9 +86,15 @@ namespace Груповая_динамика_Программа
                     return;
                 }
 
+                if(PositionByList == -1)
+                {
+                    MessageBox.Show("Ошибка получения данных пользователя!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 DialogResult = DialogResult.OK;
 
-                userData = UserByForm;
+                userData = UsersData[PositionByList];
 
                 this.Close();
             }
@@ -107,6 +116,15 @@ namespace Груповая_динамика_Программа
                 if (UsersData == null)
                     UsersData = new List<UserData>();
 
+                if(!UserByForm.AdminByUser)
+                {
+                    if(MessageBox.Show("Вы хотите стать администратором?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        UserByForm.AdminByUser = true;
+                        MessageBox.Show("Вы теперь аднимистратор!", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
                 UsersData.Add(UserByForm);
 
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<UserData>));
@@ -116,7 +134,12 @@ namespace Груповая_динамика_Программа
                     xmlSerializer.Serialize(fs, UsersData);
                 }
 
-                MessageBox.Show("Вы успешно зарегестрировались!", "Оповещение.", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                if(UserByForm.AdminByUser)
+                    MessageBox.Show("Вы успешно зарегестрировались!\n\rВаша текущая роль: Администратор", "Оповещение.", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Question);
+                else
+                    MessageBox.Show("Вы успешно зарегестрировались!\n\rВаша текущая роль: Пользователь", "Оповещение.", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Question);
 
                 DialogResult = DialogResult.OK;
                 
@@ -130,14 +153,15 @@ namespace Груповая_динамика_Программа
         [Serializable]
         public struct UserData
         {
-            public UserData(string _NameUser, string _PasswordUser)
+            public UserData(string _NameUser, string _PasswordUser, bool _AdminByUser)
             {
                 NameUser = _NameUser;
                 PasswordUser = _PasswordUser;
+                AdminByUser = _AdminByUser;
             }
             public string NameUser;
             public string PasswordUser;
-
+            public bool AdminByUser;
             public override bool Equals(object obj)
             {
                 //return base.Equals(obj);

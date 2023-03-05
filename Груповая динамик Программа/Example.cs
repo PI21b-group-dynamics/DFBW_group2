@@ -29,8 +29,6 @@ namespace Груповая_динамика_Программа
             }
             else 
                 throw new DirectoryNotFoundException("Данной дериктории не существует!!!");
-
-            return "";
         }
 
         private void createRndWord()

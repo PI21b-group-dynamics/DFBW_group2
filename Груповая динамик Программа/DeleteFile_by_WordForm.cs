@@ -24,7 +24,7 @@ namespace Груповая_динамика_Программа
 
         private void DeleteFile_by_WordForm_Load(object sender, EventArgs e)
         {
-            LogsTextField.MouseWheel += new MouseEventHandler(MouseWheelLogsTextField);
+            LogsTextField.MouseWheel += MouseWheelLogsTextField; //new MouseEventHandler(MouseWheelLogsTextField);
 
             wordTextField_Leave(new object(), new EventArgs());
             addresTextField_Leave(new object(), new EventArgs());
@@ -32,6 +32,18 @@ namespace Груповая_динамика_Программа
             LogsTextField.Select();
 
             folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory();
+
+            ToolTip tp = new ToolTip();
+
+            tp.SetToolTip(chooseFolder, "Выставить дерректорию");
+            tp.SetToolTip(sendButton, "Найти и удалить файлы с выставленным словом по заданной дирректории");
+            tp.SetToolTip(helpButton, "Кратнка справка о програмном изделии");
+            tp.SetToolTip(createRndExampleButton, "Генерирует тестовый пример по заданной директории");
+            
+            if(userData.AdminByUser)
+                tp.SetToolTip(showAllLogsButton, "Отобразить истории пользователей");
+            else
+                tp.SetToolTip(showAllLogsButton, "Отобразить всю историю пользователя");
         }
 
         /*----PlaceholderText---*/
@@ -146,10 +158,16 @@ namespace Груповая_динамика_Программа
         private void MouseWheelLogsTextField(object obj, MouseEventArgs e)
         {
             if(Control.ModifierKeys == Keys.Control)
+            {
                 if (e.Delta > 0)
                     LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size + 1);
                 else
+                {
+                    if (LogsTextField.Font.Size - 1 < 1) return;
+
                     LogsTextField.Font = new Font(LogsTextField.Font.Name, LogsTextField.Font.Size - 1);
+                }
+            }
         }
 
         
@@ -214,6 +232,44 @@ namespace Груповая_динамика_Программа
             if (addresTextField.Text.Length == 0) return;
 
             Process.Start("explorer.exe", addresTextField.Text);
+        }
+
+        private void showAllLogsButton_Click(object sender, EventArgs e)
+        {
+            if(userData.AdminByUser)
+            {
+                AdminUsersHistory_ adm = new AdminUsersHistory_();
+
+                if (!adm.CorrectData)
+                {
+                    MessageBox.Show("Файл с данными пользователями не корректен или поврежден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    adm.Dispose();
+                    return;
+                }
+                else
+                    adm.Show();
+
+            }
+            else
+            {
+                UserHistory userHistory = new UserHistory(in userData);
+
+                if(userHistory.IsDisposed == true)
+                {
+                    MessageBox.Show("У вас отсутствует история!", "Оповещение", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    userHistory.Dispose();
+                    return;
+                }
+                else 
+                    userHistory.Show();
+
+                //if (!userHistory.UserHasHistory)
+                //{
+                //    MessageBox.Show("У вас отсутствует история!", "Оповещение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    userHistory.Dispose();
+                //    return;
+                //}
+            }
         }
 
         private void helpButton_Click(object sender, EventArgs e)

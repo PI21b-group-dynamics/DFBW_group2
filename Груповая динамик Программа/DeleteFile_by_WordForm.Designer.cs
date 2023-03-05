@@ -35,8 +35,9 @@
             this.createRndExampleButton = new System.Windows.Forms.Button();
             this.LogsTextField = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.chooseFolder = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
+            this.showAllLogsButton = new System.Windows.Forms.Button();
+            this.chooseFolder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addresTextField
@@ -112,18 +113,6 @@
             // 
             this.folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
-            // chooseFolder
-            // 
-            this.chooseFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chooseFolder.Image = global::Груповая_динамика_Программа.Properties.Resources.open_folder;
-            this.chooseFolder.Location = new System.Drawing.Point(713, 11);
-            this.chooseFolder.Margin = new System.Windows.Forms.Padding(4);
-            this.chooseFolder.Name = "chooseFolder";
-            this.chooseFolder.Size = new System.Drawing.Size(52, 36);
-            this.chooseFolder.TabIndex = 6;
-            this.chooseFolder.UseVisualStyleBackColor = true;
-            this.chooseFolder.Click += new System.EventHandler(this.chooseFolder_Click);
-            // 
             // helpButton
             // 
             this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -137,11 +126,36 @@
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // showAllLogsButton
+            // 
+            this.showAllLogsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.showAllLogsButton.Image = global::Груповая_динамика_Программа.Properties.Resources.show_all_history;
+            this.showAllLogsButton.Location = new System.Drawing.Point(713, 54);
+            this.showAllLogsButton.Margin = new System.Windows.Forms.Padding(4);
+            this.showAllLogsButton.Name = "showAllLogsButton";
+            this.showAllLogsButton.Size = new System.Drawing.Size(52, 36);
+            this.showAllLogsButton.TabIndex = 8;
+            this.showAllLogsButton.UseVisualStyleBackColor = true;
+            this.showAllLogsButton.Click += new System.EventHandler(this.showAllLogsButton_Click);
+            // 
+            // chooseFolder
+            // 
+            this.chooseFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chooseFolder.Image = global::Груповая_динамика_Программа.Properties.Resources.open_folder;
+            this.chooseFolder.Location = new System.Drawing.Point(713, 11);
+            this.chooseFolder.Margin = new System.Windows.Forms.Padding(4);
+            this.chooseFolder.Name = "chooseFolder";
+            this.chooseFolder.Size = new System.Drawing.Size(52, 36);
+            this.chooseFolder.TabIndex = 6;
+            this.chooseFolder.UseVisualStyleBackColor = true;
+            this.chooseFolder.Click += new System.EventHandler(this.chooseFolder_Click);
+            // 
             // DeleteFile_by_WordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 427);
+            this.Controls.Add(this.showAllLogsButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.chooseFolder);
             this.Controls.Add(this.LogsTextField);
@@ -171,6 +185,7 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button chooseFolder;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.Button showAllLogsButton;
     }
 }
 
