@@ -26,13 +26,17 @@ namespace Груповая_динамика_Программа
             InitializeComponent();
             DialogResult = DialogResult.Cancel;
 
+            LoginTextBox.KeyPress += StartWhen_Enter;
+            Password_One_TextBox.KeyPress += StartWhen_Enter;
+            Password_Two_TextBox.KeyPress += StartWhen_Enter;
+
             Password_One_TextBox.KeyPress += Entry_ban;
             Password_Two_TextBox.KeyPress += Entry_ban;
         }
 
         private void LoginOrRegistrationButton_Click(object sender, EventArgs e)
         {
-            if (LoginTextBox.Text.Equals("") || Password_One_TextBox.Text.Equals(""))
+            if (LoginTextBox.Text.Length == 0 || Password_One_TextBox.Text.Length == 0)
             {
                 MessageBox.Show("Поле ввода пусто!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -254,6 +258,15 @@ namespace Груповая_динамика_Программа
             {
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void StartWhen_Enter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                LoginOrRegistrationButton_Click(new object(), new EventArgs());
+                e.Handled = true;
             }
         }
     }
